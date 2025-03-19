@@ -1,0 +1,13 @@
+{
+    "name": "ecosearch",
+    "version": "1.0.0",
+    "description": "Join to Waitlist form with Netlify Functions",
+    "main": "index.js",
+    "scripts": {
+        "start": "netlify dev"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.7",
+        "resend": "^1.1.0"
+    }
+}

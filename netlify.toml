@@ -1,0 +1,11 @@
+[build]
+  functions = "netlify/functions"  # Directory where your Netlify functions are stored
+  command = ""  # No build command if you're not using any build tools like React, Vue, etc.
+  publish = "public"  # Folder that contains your static files (HTML, CSS, JS, etc.)
+
+[[redirects]]
+  from = "/api/*"  # Redirect requests from "/api/*" to your Netlify functions
+  to = "/.netlify/functions/:splat"  # This is where Netlify functions are stored
+  status = 200  # HTTP status code for the redirect
+
+  

@@ -1,0 +1,290 @@
+/* General Styles */
+body, html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    background-color: rgb(253, 247, 244);
+} 
+
+/* Prevent scrolling when popup is open */
+.no-scroll {
+    overflow: hidden;
+    position:fixed;
+    height: 100vh;
+}
+.btn-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Navbar */
+.navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.green {
+    color: rgb(125, 158, 119);
+}
+
+.black {
+    color: black;
+}
+
+/* Hero Section */
+#page1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+/* Footer Text at Bottom */
+#page1 h1 {
+    position: absolute;
+    letter-spacing: -4px;
+    font-size: 5.8vw;
+    font-weight: 799;
+    text-align: center;
+    margin-bottom: -80px;
+}
+
+/* Waitlist Form */
+.waitlist-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -85px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-box {
+    position: relative;
+    z-index: 10;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    min-width: 400px;
+    height: 33px;
+}
+
+.input-box input {
+    border: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    min-width: 380px;
+    border-radius: 10px;
+    background-color: white;
+    height: 100%;
+    color: black;
+}
+
+button {
+    position: relative;
+    z-index: 10;
+    background-color: rgb(125, 158, 119);
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.button-box {
+    height: 54px;
+    display: flex;
+    align-items: center;
+}
+
+/* Popup Overlay */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 999;
+    pointer-events: none; 
+    /* Prevent interaction blocking */
+}
+
+/* Popup Box */
+.popup-box {
+    background-color: rgb(125, 158, 119);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    min-width: 130px;
+    text-align: center;
+    position: relative;
+    bottom: 60px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    pointer-events: all; /* Allow interaction inside popup */
+}
+
+/* Show popup animation */
+.popup-container.show {
+    display: flex;
+    pointer-events: all;
+}
+
+.popup-container.show .popup-box {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Close Button */
+.close-btn {
+    
+    
+    cursor: pointer;
+    font-size: 14px;
+    color: lightgrey;
+}
+.blank-page {
+    height: 100vh; /* Full-screen height */
+    background-color: transparent; /* Keep it empty */
+}
+#page2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    padding: 0 50vw;
+}
+
+#page2 h1 {
+    position: absolute;
+    letter-spacing: -4px;
+    font-size: 4.8vw;
+    font-weight: 550;
+    text-align: center;
+    max-width: 60vw;
+    margin-bottom: -80px;
+    line-height: 1.1;
+    word-wrap: break-word;
+}
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap:50px;
+    column-gap:240px;
+    text-align: center;
+    padding: 0vw 10vw;
+    margin-top:-20px;
+    margin-bottom:100px;
+    /* background-color: #f8f5f2; */
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature img {
+    margin-bottom:-40px;
+    width: 80px; /* Adjust icon size */
+}
+
+.feature h3 {
+    margin-bottom:3px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position:relative;
+    display:inline-block;
+    color: black;
+}
+.feature h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px; /* Adjust thickness as needed */
+    background-color: rgb(125, 158, 119);
+    position: absolute;
+    border-radius:5px;
+    bottom: -5px; /* Adjust distance from text */
+    left: 0;
+    transform: rotate(-2deg); /* Slight tilt */
+}
+.feature p {
+    line-height:1.6;
+    margin-top:10px;
+    font-size: 1rem;
+    font-weight: 549;
+    color: gray;
+    max-width: 90%;
+}
+#page3 {
+    width: 100%;
+    text-align: left;
+    padding: 20px 0;
+    background-color:rgb(125, 158, 119);
+    height:190px;
+    position: relative;
+    margin-top:55vh;
+}
+
+#page3 h3{
+    color:white;
+    font-size:25px;
+    margin: 5px 0;
+    padding:20px 40px;
+}
+#page3 p{
+    color:white;
+    padding:20px 40px;
+    margin-top: 55px;
+
+}
+ 
